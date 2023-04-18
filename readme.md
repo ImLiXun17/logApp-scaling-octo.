@@ -1,23 +1,16 @@
-# **CRYPTO APP**
+# **LOG-APP**
 
 ## **Description** 
 
-A crypto tracker app is a mobile application that allows users to monitor and keep track of the price and other information related to cryptocurrencies. It provides a convenient and easy-to-use interface for users to stay up-to-date with the latest developments in the crypto market.
+A log app is a software application that provides a centralized platform for collecting, storing, analyzing, and managing log data. Logs are records of events, messages, and actions that occur within an IT infrastructure, including servers, networks, applications, and security devices.
+
+The purpose of a log app is to make it easier for IT administrators to monitor and troubleshoot their systems by providing a consolidated view of log data. The app collects logs from multiple sources and stores them in a searchable and filterable database. This allows administrators to quickly find specific log entries and identify patterns or trends in system behavior.
 
 ## **Visuals** 
-![This is the visual of logApp](https://static.vecteezy.com/system/resources/previews/000/464/024/original/set-of-ui-ux-gui-screens-cryptocurrency-app-flat-design-template-for-mobile-apps-responsive-website-wireframes-web-design-ui-kit-cryptocurrency-dashboard-vector.jpg)
+![This is the visual of logApp](https://i.pinimg.com/564x/61/93/8e/61938ec7fa9121ba2730d91180136303.jpg)
 
 ## **Installation** 
 
-### Clone the repository:
-```
-git clone https://github.com/crypto-owner/crypto-app.git
-```
-### Install dependencies::
-```
-cd your-app
-npm install
-```
 ### Download Xampp to set your server and database.
 [Xampp Link Download](https://www.apachefriends.org/download.html)
 ![Image](https://1.bp.blogspot.com/-LRsqmuaX9Q0/XhhZfDGmkYI/AAAAAAAAAeo/Yhg_wi79pE03FituFE0Y0gKJ7FBKV_ihQCLcBGAsYHQ/s1600/xampp-virtual-host.png)
@@ -26,14 +19,37 @@ npm install
 ### Create a new database for your application.
 ![Image](https://installatron.com/images/remote/ss2_phpmyadmin.png)
 
-### Create a .env file with your environment variables:
+### Set-up Your Database:
 ```
-PORT=3000
-DATABASE_URL=your-database-url
+<?php
+	define('ROOT_URL', 'http://localhost/logApp-scaling-octo/index.php');
+	define('DB_HOST', 'localhost');
+	define('DB_USER', 'root');
+	define('DB_PASS', '');
+	define('DB_NAME', 'logapp_usersdb');
+	?>
 ```
-### start application:
+### Establish Connection:
 ```
-npm start
+<?php
+	// Create Connection
+	$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+	// Check Connection
+	if(mysqli_connect_errno()){
+		// Connection Failed
+		echo 'Failed to connect to MySQL '. mysqli_connect_errno();
+	}
+	?>
+```
+### Use require method to Insert connection:
+```
+require('config/config.php');
+require('config/db.php');
+```
+### Start application:
+```
+Start with your html and css with the following step above
 ```
 ## **Authors** 
 
